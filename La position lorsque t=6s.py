@@ -10,17 +10,17 @@ omega_val = pi / 3.00  # rad/s
 # Définir l'expression de la force Fx
 Fx = A * sin(omega * t)
 
-# Intégrer Fx par rapport au temps pour obtenir l'expression de la vitesse (v = intégrale de F/m dt)
+# Intégrer Fx par rapport au temps pour obtenir l'expression de la vitesse
 m = 0.100  # kg
 v = integrate(Fx/m, t).subs({A: A_val, omega: omega_val})
 
-# Intégrer v par rapport au temps pour obtenir l'expression de la position x (x = intégrale de v dt)
+# Intégrer v par rapport au temps pour obtenir l'expression de la position x 
 x = integrate(v, t)
 
 # Calculer la position du véhicule à t = 6.00 s
 x_val = x.subs(t, 6.00)
 
 # Utiliser print pour afficher la réponse
-print(f"la position lorsque t=6s est :")
+print("la position lorsque t=6s est :")
 print(x_val.evalf()) 
 
