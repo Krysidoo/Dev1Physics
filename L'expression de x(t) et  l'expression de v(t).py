@@ -1,11 +1,8 @@
 import sympy as sp
 
 # Définition des symboles pour sympy
+t, A, m, omega = sp.symbols('t, A, m, omega', positive=True)
 
-t = sp.symbols('t', positive=True)
-A = sp.symbols('A',  positive=True)
-m = sp.symbols('m',  positive=True)
-omega = sp.symbols('omega',  positive=True)
 # Calcul de l'accélération
 ax = A * t * sp.sin(omega * t) / m
 
@@ -20,4 +17,6 @@ x_t_simplified = x_t.simplify()
 v_x_simplified = v_x.simplify()
 
 print(f"L'expression simplifiée de x(t) est : {x_t_simplified}")
+
+
 print(f"L'expression simplifiée de v(t) est : {v_x_simplified}")
